@@ -42,6 +42,42 @@ def get_pitagoreyans():
         print("Nie są trójkami pitagorejskimi")
 
 
+# zad6
+def curious():
+    first_two: int
+    last_two: int
+    for i in range(1000, 9999):
+        first_two = i % 100
+        last_two = i // 100
+
+        if i == first_two ** 2 + last_two ** 2:
+            print("Spełnia zależnosć=" + str(i))
+
+
+def get_catalans():
+    even: int = 0
+    odd: int = 0
+
+    for i in range(0, 1000_000):
+        num = catalan(i)
+        print("Num=" + str(num))
+        if num %2 == 0:
+            even += 1
+        else:
+            odd += 1
+
+    print("Even=" + str(even) + " Odd" + str(odd))
+
+    return None
+
+
+def catalan(n):
+    if n == 0:
+        return 1
+    else:
+        return ((4 * n + 2) / (n + 2)) * catalan(n - 1)
+
+
 def home_work():
     k: int = int(input("Wprowadź k="))
 
@@ -65,7 +101,9 @@ def home_work():
 def main():
     # random_numbers()
     # get_numbers()
-    get_pitagoreyans()
+    # get_pitagoreyans()
+    # curious()
+    get_catalans()
     # home_work()
 
 
